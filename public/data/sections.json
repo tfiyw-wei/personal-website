@@ -1,0 +1,22 @@
+{
+    "sections": [
+        {
+            "id": "about",
+            "categoryId": "home",
+            "jsonPath": "/data/sections/cover.json",
+            "faIcon": "fa-solid fa-address-card"
+        },
+        {
+            "id": "portfolio",
+            "categoryId": "showcase",
+            "jsonPath": "/data/sections/portfolio.json",
+            "faIcon": "fa-solid fa-folder-open"
+        },
+        {
+            "id": "contact",
+            "categoryId": "connect",
+            "jsonPath": "/data/sections/contact.json",
+            "faIcon": "fa-regular fa-envelope"
+        }
+    ]
+}

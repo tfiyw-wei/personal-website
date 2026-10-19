@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="一份关于我，和我所热爱的事的介绍。">
+  <meta name="theme-color" content="#f6f4ed">
+  <title>你的名字 · 个人介绍</title>
+  <style>
+    :root{--paper:#f6f4ed;--ink:#253b32;--muted:#6c746c;--line:#d8dbd0;--green:#dce6d4;--orange:#cf6645;--white:#fffef9;--serif:Georgia,"Songti SC","STSong",serif;--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    *{box-sizing:border-box}[hidden]{display:none!important}html{scroll-behavior:smooth;scroll-padding-top:35px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}button,input,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible{outline:3px solid var(--orange);outline-offset:5px}::selection{background:#d7e2cd}svg{display:block}button svg,a svg{flex:none}.wrap{max-width:1200px;padding:0 52px;margin:auto}
+    .header{height:104px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;letter-spacing:.06em}.brand-mark{font:italic 31px var(--serif);letter-spacing:-3px;margin-right:3px}.nav{display:flex;align-items:center;gap:32px;font-size:13px}.nav a{color:var(--muted)}.nav a:hover{color:var(--orange)}.edit-button{border:1px solid var(--ink);background:transparent;border-radius:30px;display:flex;align-items:center;gap:8px;padding:11px 17px;font-size:12px;color:var(--ink);transition:background .2s,color .2s}.edit-button:hover{background:var(--ink);color:var(--paper)}
+    .hero{padding:74px 0 70px;display:grid;grid-template-columns:1.12fr 1fr;gap:54px;align-items:center}.eyebrow{font-size:11px;letter-spacing:.19em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;gap:10px}.eyebrow::before{content:"";height:6px;width:6px;border-radius:50%;background:var(--orange)}h1{font-size:clamp(42px,4.8vw,62px);font-weight:500;letter-spacing:-.045em;line-height:1.35;margin:26px 0 24px;overflow-wrap:anywhere}.name{font-weight:600;display:inline-block;position:relative;z-index:0}.name::after{position:absolute;content:"";height:11px;background:#dce4cc;left:-2px;right:-2px;bottom:8px;z-index:-1}.period{color:var(--orange)}.hero-bio{font-size:15px;line-height:1.95;color:var(--muted);max-width:385px;margin:0;white-space:pre-line}.hero-meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:25px;color:var(--muted);font-size:12px}.hero-meta span+span::before{content:"/";margin-right:12px;color:#a4ab9d}.primary{display:inline-flex;align-items:center;justify-content:center;gap:26px;background:var(--ink);color:var(--white);padding:15px 22px;border-radius:4px;border:1px solid var(--ink);font-size:13px;transition:transform .2s,background .2s}.primary:hover{background:#385143;transform:translateY(-2px)}.hero-actions{margin-top:34px;display:flex;align-items:center;gap:24px}.text-link{display:inline-flex;gap:8px;align-items:center;font-size:12px;border-bottom:1px solid #a6ae9d;padding:5px 0}.text-link:hover{color:var(--orange)}
+    .art{position:relative;min-width:0}.art-frame{background:var(--green);border-radius:150px 150px 8px 8px;aspect-ratio:1/1.12;overflow:hidden;position:relative}.art-frame>svg{width:100%;height:100%}.art-note{position:absolute;left:-22px;bottom:26px;background:var(--white);padding:17px 21px;box-shadow:0 7px 30px #253b320c;transform:rotate(-5deg);border:1px solid #e6e5dc;min-width:185px}.art-note span{display:block;font-size:9px;letter-spacing:.17em;color:var(--muted);margin-bottom:7px}.art-note strong{font-size:14px;font-weight:500;letter-spacing:.06em}.art-topline{position:absolute;top:30px;left:0;width:100%;text-align:center;font:11px var(--serif);letter-spacing:.28em}.art-caption{display:flex;justify-content:space-between;gap:12px;margin:18px 0 0;font-size:9px;letter-spacing:.15em;color:var(--muted)}
+    .section{display:grid;grid-template-columns:230px 1fr;gap:34px;padding:58px 0;border-top:1px solid var(--line);scroll-margin-top:25px}.section-label{display:flex;align-items:baseline;gap:20px;font-size:12px;letter-spacing:.08em;padding-top:9px}.section-label span{font:italic 13px var(--serif);color:var(--orange)}.section h2{font-size:28px;font-weight:500;letter-spacing:-.025em;line-height:1.5;margin:0 0 22px}.about-text{font-size:15px;line-height:2.15;color:var(--muted);margin:0;white-space:pre-line;overflow-wrap:anywhere}.little-note{margin:27px 0 0;font-size:11px;letter-spacing:.08em;display:flex;gap:9px;align-items:center;color:var(--muted)}.little-note::before{content:"";width:20px;height:1px;background:var(--orange)}.interests-intro{color:var(--muted);font-size:13px;line-height:1.8;margin:-7px 0 25px}.interests{display:flex;gap:10px;flex-wrap:wrap}.interest{border:1px solid #c6cfbd;border-radius:100px;padding:13px 20px;font-size:13px;display:flex;align-items:center;gap:12px;background:#ecede3}.interest span{font-size:11px;color:var(--orange);font-family:var(--serif)}
+    .contact{background:var(--ink);color:var(--paper);margin:16px 0 0;border-radius:7px;padding:42px 45px;display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center}.contact-label{font-size:9px;letter-spacing:.22em;color:#bac7b6}.contact h2{font-weight:400;font-size:31px;line-height:1.55;letter-spacing:-.025em;margin:15px 0 12px}.contact-detail{font-size:12px;color:#c1ccb9;line-height:1.8;overflow-wrap:anywhere;margin:0}.contact-button{background:var(--paper);border:0;color:var(--ink);padding:15px 18px;border-radius:4px;display:flex;align-items:center;gap:18px;font-size:12px}.contact-button:hover{background:#e1e8d7}.footer{display:flex;justify-content:space-between;gap:20px;padding:30px 0 35px;color:var(--muted);font-size:10px;letter-spacing:.05em}.footer p{margin:0}.footer a{border-bottom:1px solid var(--line)}
+    dialog{width:min(570px,calc(100% - 28px));max-height:90dvh;padding:0;border:1px solid var(--line);border-radius:14px;background:var(--white);color:var(--ink);box-shadow:0 30px 100px #16271b40}dialog::backdrop{background:#17271f70;backdrop-filter:blur(4px)}.editor-head{padding:25px 28px 18px;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line)}.editor-head h2{font-size:21px;font-weight:500;margin:0}.close-button{border:0;background:transparent;color:var(--muted);padding:6px;border-radius:5px}.close-button:hover{background:var(--paper)}.editor-body{padding:22px 28px 27px}.editor-help{font-size:12px;color:var(--muted);line-height:1.9;margin:0 0 20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.field{display:flex;flex-direction:column;gap:7px;min-width:0}.field.wide{grid-column:1/-1}.field label{font-size:12px;font-weight:500}.optional{font-weight:400;color:var(--muted);font-size:10px;margin-left:5px}.field input,.field textarea{width:100%;border:1px solid var(--line);border-radius:5px;padding:10px 11px;background:#fafaf5;color:var(--ink);font-size:13px;line-height:1.7}.field textarea{resize:vertical;min-height:80px}.field input:focus,.field textarea:focus{outline:2px solid #9aac91;outline-offset:1px}.field small{font-size:10px;line-height:1.7;color:var(--muted)}.editor-actions{display:flex;align-items:center;justify-content:flex-end;gap:11px;margin-top:24px}.secondary{padding:12px 16px;border:1px solid var(--line);background:transparent;border-radius:4px;color:var(--ink);font-size:12px}.editor-actions .primary{padding:12px 17px;font-size:12px}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;transition:opacity .2s,transform .2s;background:var(--ink);color:white;padding:13px 20px;border-radius:8px;box-shadow:0 10px 30px #253b3220;z-index:5;font-size:12px;line-height:1.7;max-width:calc(100% - 30px);width:max-content;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(min-width:1450px){.hero{gap:90px}.wrap{max-width:1260px}.hero{padding-top:90px;padding-bottom:90px}}
+    @media(max-width:850px){.wrap{padding:0 30px}.hero{gap:30px;grid-template-columns:1.1fr 1fr;padding:58px 0}.hero h1{font-size:43px}.hero-actions{gap:18px}.art-note{left:-10px;padding:13px 16px;min-width:160px}.art-note strong{font-size:12px}.section{grid-template-columns:160px 1fr;gap:22px}.contact{padding:32px}.nav{gap:20px}}
+    @media(max-width:620px){.wrap{padding:0 23px}.header{height:84px;gap:12px}.brand{font-size:13px}.brand-mark{font-size:29px}.nav{gap:0}.nav a{display:none}.edit-button{font-size:11px;padding:10px 12px}.hero{grid-template-columns:1fr;gap:48px;padding:46px 0 47px}.hero h1{font-size:clamp(40px,10vw,59px);margin-top:23px}.hero-bio{font-size:14px;max-width:100%}.hero-meta{margin-top:21px}.hero-actions{margin-top:26px}.art{max-width:340px;width:85%;justify-self:center}.art-frame{border-radius:130px 130px 7px 7px;aspect-ratio:1/1.03}.art-note{left:-18px;bottom:26px}.art-topline{top:23px}.section{grid-template-columns:1fr;gap:23px;padding:34px 0}.section-label{padding:0;gap:15px}.section h2{font-size:25px;margin-bottom:15px}.about-text{font-size:14px;line-height:2}.little-note{margin-top:20px}.interest{padding:11px 17px;font-size:12px}.contact{grid-template-columns:1fr;padding:30px 25px;gap:22px;margin-top:10px}.contact h2{font-size:29px}.contact-button{justify-self:start}.footer{font-size:9px;line-height:1.9;padding:24px 0 28px;gap:10px}.footer>p:last-child{max-width:115px;text-align:right}.form-grid{grid-template-columns:1fr}.field.wide{grid-column:auto}.editor-head{padding:20px}.editor-body{padding:18px 20px 23px}.editor-actions{gap:9px;flex-wrap:wrap}.editor-actions .primary,.secondary{padding:12px 14px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+    @media print{.edit-button,.nav,.hero-actions,dialog,.toast{display:none!important}body{background:white}.wrap{max-width:none;padding:0 20px}.hero{padding:30px 0;grid-template-columns:1.1fr 1fr}.art{max-width:250px}.section{break-inside:avoid;padding:25px 0}.contact{break-inside:avoid;color:var(--ink);background:transparent;border:1px solid var(--line)}.contact-label,.contact-detail{color:var(--muted)}.contact-button{display:none}}
+  </style>
+</head>
+<body id="top">
+  <div class="wrap">
+    <header class="header">
+      <a class="brand" href="#top" aria-label="返回首页"><span class="brand-mark">m.</span><span>我的个人空间</span></a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#about">关于我</a><a href="#interests">我的热爱</a><a href="#contact">联系我</a>
+        <button class="edit-button" id="edit-profile" type="button"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m15 4 5 5M4 20l4-1 12-12a2.1 2.1 0 0 0-3-3L5 16l-1 4Z"/></svg>编辑资料</button>
+      </nav>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">A LITTLE ABOUT ME</div>
+          <h1 id="hero-title">你好，<br>我是<span class="name" data-profile="name">你的名字</span><span class="period">。</span></h1>
+          <p class="hero-bio" data-profile="bio">一份关于我，和我所热爱的事的介绍。<br>很高兴在这里遇见你。</p>
+          <div class="hero-meta"><span data-profile="role">你的职业 / 身份</span><span id="city-text">你的城市</span></div>
+          <div class="hero-actions">
+            <a class="primary" href="#about">认识一下<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+            <a class="text-link" href="#contact">打个招呼 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="art" aria-label="以阳光、山丘和枝叶组成的抽象插画">
+          <div class="art-frame">
+            <span class="art-topline" aria-hidden="true">A WORK IN PROGRESS</span>
+            <svg viewBox="0 0 400 448" fill="none" aria-hidden="true">
+              <defs><clipPath id="arch"><path d="M91 370V192a109 109 0 0 1 218 0v178H91Z"/></clipPath></defs>
+              <path d="M91 370V192a109 109 0 0 1 218 0v178H91Z" fill="#f1edda"/>
+              <g clip-path="url(#arch)"><circle cx="248" cy="192" r="47" fill="#d67b54"/><path d="M57 338c49-80 98-127 167-97 52 23 66 100 126 108v78H57v-89Z" fill="#a6b895"/><path d="M65 353c100-2 142-58 230-37 32 8 58 34 71 58v52H65v-73Z" fill="#607d65"/><path d="M32 407c84-55 154-22 229-49 67-23 100 8 134 37v66H32v-54Z" fill="#314d3e"/></g>
+              <path d="M78 371h244" stroke="#68816b" stroke-width="1.2"/>
+              <path d="M332 138v29m-14-15h28m-23-10 18 19m0-19-18 19" stroke="#f6f4ed" stroke-width="1.4"/>
+              <path d="M66 279c-7-19-8-38-4-57m2 20c-13-1-23-7-27-21 15 0 26 8 27 21Zm-2 22c13-4 22-14 21-29-14 5-21 15-21 29Z" stroke="#6e856b" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M294 395c20-16 47-6 49 9 2 14-22 15-18 1 3-10 20-13 30-7" stroke="#6c8165" stroke-width="1.3" stroke-linecap="round"/>
+              <path d="M109 122c12-7 24-12 37-16" stroke="#f6f4ed" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="art-note"><span>NOTE TO MYSELF</span><strong>保持好奇，慢慢生长。</strong></div>
+          <p class="art-caption"><span>THE ART OF BEING MYSELF</span><span>↗ ALWAYS EXPLORING</span></p>
+        </div>
+      </section>
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="section-label"><span>01</span>关于我</div>
+        <div><h2 id="about-title">每个人，都有自己的故事。</h2><p class="about-text" data-profile="about">在这里写下你的个人介绍：你是谁，正在做什么，以及你想与大家分享的经历。
+不必写得很正式，三五句话，让来访的人认识一个真实的你。</p><p class="little-note">这个小小的页面，是认识我的开始。</p></div>
+      </section>
+      <section class="section" id="interests" aria-labelledby="interests-title">
+        <div class="section-label"><span>02</span>我的热爱</div>
+        <div><h2 id="interests-title">把喜欢的事，放进日常。</h2><p class="interests-intro">一些让我愿意投入时间、保持热情的事情。</p><div class="interests" id="interest-list"><div class="interest"><span>01</span>你的兴趣一</div><div class="interest"><span>02</span>你的兴趣二</div><div class="interest"><span>03</span>你的兴趣三</div></div></div>
+      </section>
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div><span class="contact-label">LET’S SAY HELLO</span><h2 id="contact-title">从一句你好，<br>开始新的连接。</h2><p class="contact-detail" id="contact-detail">欢迎交流想法，也欢迎简单地打个招呼。</p></div>
+        <button class="contact-button" id="contact-button" type="button"><span id="contact-button-text">设置联系邮箱</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></button>
+      </section>
+    </main>
+    <footer class="footer"><p>© <span id="year">2026</span> <span data-profile="name">你的名字</span><span aria-hidden="true"> · </span><a href="#top">回到顶部 ↑</a></p><p>认真生活，自在表达。</p></footer>
+  </div>
+  <dialog id="profile-editor" aria-labelledby="editor-title">
+    <div class="editor-head"><h2 id="editor-title">让这里，成为你的个人空间。</h2><button class="close-button" id="close-editor" type="button" aria-label="关闭编辑窗口"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
+    <div class="editor-body"><p class="editor-help">填写自己的介绍，页面会立即更新。资料仅保存在当前浏览器；下载 HTML 后，你的内容会随文件一起保留。</p>
+      <form id="profile-form"><div class="form-grid">
+        <div class="field"><label for="field-name">你的名字</label><input id="field-name" name="name" maxlength="24" required autocomplete="name" placeholder="你希望大家怎么称呼你"></div>
+        <div class="field"><label for="field-role">职业 / 身份</label><input id="field-role" name="role" maxlength="48" required placeholder="例如：设计师、学生、自由职业者"></div>
+        <div class="field"><label for="field-city">所在城市<span class="optional">选填</span></label><input id="field-city" name="city" maxlength="40" placeholder="例如：上海" autocomplete="address-level2"></div>
+        <div class="field"><label for="field-email">联系邮箱<span class="optional">选填</span></label><input id="field-email" name="email" type="email" maxlength="160" placeholder="you@example.com" autocomplete="email"></div>
+        <div class="field wide"><label for="field-bio">一句话介绍</label><textarea id="field-bio" name="bio" maxlength="220" rows="2" required placeholder="用一两句话介绍你自己"></textarea></div>
+        <div class="field wide"><label for="field-about">关于我</label><textarea id="field-about" name="about" maxlength="1600" rows="4" required placeholder="聊聊你的经历、现在做的事情和未来的期待"></textarea></div>
+        <div class="field wide"><label for="field-interests">兴趣与热爱</label><input id="field-interests" name="interests" maxlength="180" placeholder="例如：阅读，摄影，徒步"><small>用逗号分隔，最多展示 6 项。</small></div>
+      </div><div class="editor-actions"><button class="secondary" type="button" id="download-html">下载 HTML</button><button class="primary" type="submit">保存并查看 <span aria-hidden="true">↗</span></button></div></form>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="application/json" id="profile-data">{"name":"你的名字","role":"你的职业 / 身份","city":"你的城市","email":"","bio":"一份关于我，和我所热爱的事的介绍。\n很高兴在这里遇见你。","about":"在这里写下你的个人介绍：你是谁，正在做什么，以及你想与大家分享的经历。\n不必写得很正式，三五句话，让来访的人认识一个真实的你。","interests":["你的兴趣一","你的兴趣二","你的兴趣三"]}</script>
+  <script>
+    (() => {
+      'use strict';
+      const defaults = JSON.parse(document.getElementById('profile-data').textContent);
+      const storageKey = 'personal-intro-v1:' + location.pathname;
+      const dialog = document.getElementById('profile-editor');
+      const form = document.getElementById('profile-form');
+      let profile = {...defaults};
+      let toastTimer;
+      function normalize(data) {
+        const result = {};
+        for (const [key, limit] of Object.entries({name:24,role:48,city:40,email:160,bio:220,about:1600})) {
+          result[key] = typeof data[key] === 'string' ? data[key].trim().slice(0, limit) : defaults[key];
+        }
+        for (const key of ['name','role','bio','about']) if (!result[key]) result[key] = defaults[key];
+        if (result.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(result.email)) result.email = '';
+        result.interests = Array.isArray(data.interests) ? data.interests.filter(item => typeof item === 'string').map(item => item.trim().slice(0,32)).filter(Boolean).slice(0,6) : defaults.interests;
+        return result;
+      }
+      try { const stored = JSON.parse(localStorage.getItem(storageKey)); if (stored && typeof stored === 'object') profile = normalize(stored); } catch (_) {}
+      function render() {
+        document.title = profile.name + ' · 个人介绍';
+        document.querySelector('meta[name="description"]').setAttribute('content', profile.bio.replace(/\s+/g,' '));
+        document.querySelectorAll('[data-profile]').forEach(element => { element.textContent = profile[element.dataset.profile]; });
+        const city = document.getElementById('city-text');
+        city.textContent = profile.city; city.hidden = !profile.city;
+        const list = document.getElementById('interest-list');
+        list.replaceChildren();
+        profile.interests.forEach((interest, index) => {
+          const tag = document.createElement('div'); tag.className = 'interest';
+          const number = document.createElement('span'); number.textContent = String(index+1).padStart(2,'0');
+          tag.append(number, document.createTextNode(interest)); list.append(tag);
+        });
+        document.getElementById('interests').hidden = profile.interests.length === 0;
+        document.getElementById('contact-detail').textContent = profile.email || '欢迎交流想法，也欢迎简单地打个招呼。';
+        document.getElementById('contact-button-text').textContent = profile.email ? '给我写封邮件' : '设置联系邮箱';
+        document.getElementById('year').textContent = new Date().getFullYear();
+      }
+      function notify(message) {
+        const toast = document.getElementById('toast'); toast.textContent = message; toast.classList.add('show');
+        clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('show'), 3600);
+      }
+      function openEditor(focusEmail = false) {
+        for (const key of ['name','role','city','email','bio','about']) form.elements.namedItem(key).value = profile[key];
+        form.elements.namedItem('interests').value = profile.interests.join('，');
+        dialog.showModal(); document.body.style.overflow = 'hidden';
+        if (focusEmail) form.elements.namedItem('email').focus();
+      }
+      function collect() {
+        const data = Object.fromEntries(new FormData(form));
+        data.interests = data.interests.split(/[，,、\n]/);
+        return normalize(data);
+      }
+      function save() {
+        profile = collect(); render();
+        try { localStorage.setItem(storageKey, JSON.stringify(profile)); return true; } catch (_) { return false; }
+      }
+      document.getElementById('edit-profile').addEventListener('click', () => openEditor());
+      document.getElementById('close-editor').addEventListener('click', () => dialog.close());
+      dialog.addEventListener('close', () => { document.body.style.overflow = ''; });
+      dialog.addEventListener('click', event => {
+        const box = dialog.getBoundingClientRect();
+        if (event.target === dialog && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) dialog.close();
+      });
+      form.addEventListener('submit', event => {
+        event.preventDefault(); if (!form.reportValidity()) return;
+        const persisted = save(); dialog.close();
+        notify(persisted ? '资料已保存，欢迎来到你的个人空间。' : '页面已更新；浏览器无法保存资料，请下载 HTML 保留内容。');
+      });
+      document.getElementById('contact-button').addEventListener('click', () => {
+        if (profile.email) location.href = 'mailto:' + profile.email; else openEditor(true);
+      });
+      document.getElementById('download-html').addEventListener('click', () => {
+        if (!form.reportValidity()) return;
+        save();
+        const clone = document.documentElement.cloneNode(true);
+        clone.querySelector('#profile-data').textContent = JSON.stringify(profile).replace(/</g, '\\u003c');
+        clone.querySelector('body').style.overflow = '';
+        clone.querySelector('#profile-editor').removeAttribute('open');
+        clone.querySelector('#toast').classList.remove('show');
+        clone.querySelector('#toast').textContent = '';
+        const blob = new Blob(['<!DOCTYPE html>\n' + clone.outerHTML], {type:'text/html;charset=utf-8'});
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a'); link.href = url;
+        link.download = profile.name.replace(/[\\/:*?"<>|]/g, '-') + '-个人介绍.html';
+        document.body.append(link); link.click(); link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 2000);
+        notify('已生成 HTML 文件，个人资料会随文件一起保留。');
+      });
+      render();
+    })();
+  </script>
+</body>
+</html>

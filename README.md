@@ -1,57 +1,41 @@
-# WEI OS · 个人作品集
+# tfiyw-wei · 个人作品集
 
-tfiyw-wei 的浅色桌面风格个人网站，围绕 **AI 产品探索与交互原型** 展示作品、探索方法与联系方式。
+[打开网站](https://tfiyw-wei.github.io/personal-website/) · [GitHub](https://github.com/tfiyw-wei) · [小红书](https://www.xiaohongshu.com/user/profile/5b55ea34f7e8b907ecbd300a) · [邮箱](mailto:179369971@qq.com)
 
-**在线访问：[tfiyw-wei.github.io/personal-website](https://tfiyw-wei.github.io/personal-website/)**
+展示 AI 产品探索、交互原型与网页作品，包含「关于我」「我的作品」「保持联系」三个页面。
 
-## 页面与交互
+## 使用的开源模板
 
-- 关于：个人介绍与从场景到原型的探索流程。
-- 作品：两个真实作品，支持分类筛选、在线体验和源码入口。
-- 探索方法：从观察场景到体验迭代的四步路径。
-- 联系：小红书、GitHub、邮件入口与复制邮箱。
-- 支持 hash 深链接、浏览器前进/后退、键盘导航、减少动画偏好。
-- `⌘/Ctrl + K` 打开快速导航；窗口右上角可切换专注视图，`Esc` 退出。
+直接采用 [Ryan Balieiro / React Portfolio](https://github.com/ryanbalieiro/react-portfolio-template) 的完整 React 组件、侧栏、内容面板、作品卡片和移动端导航。
 
-## 本地运行
+- 上游版本：`81f0278a2fe9d7387c49b9fc22d1e293be9f7213`（v2.0.3）。
+- [MIT LICENSE](./LICENSE)，Copyright (c) 2025 RYAN BALIEIRO。
+- 个性化修改：中文资料、实际作品、灰蓝浅色主题、系统字体、联系入口与键盘操作支持。
+- 移除了示例履历、推荐语、联系表单服务及访问统计上报；没有提交邮件的后端。
+- 页面中的模板来源链接及源文件原作者注释保留。
 
-纯 HTML、CSS、JavaScript，无构建步骤和第三方运行时依赖。
+## 本地运行与构建
 
 ```sh
-python3 -m http.server 8877
+npm ci
+npm run dev
+npm run build
+npm run preview
 ```
 
-访问 `http://localhost:8877/`。
+Vite 的站点路径为 `/personal-website/`。生产文件生成到 `docs/`，GitHub Pages 从 `main` 分支的 `/docs` 发布。修改内容后运行 `npm run build`，将源码与 `docs/` 一并提交。
 
-```text
-index.html              新个人站入口
-assets/style.css        浅色 OS 视觉与响应式布局
-assets/app.js           路由、筛选、快捷导航、邮箱复制
-assets/avatar.png       tfiyw-wei 的公开 GitHub 头像
-assets/eleme-cover.jpg   已有品牌概念作品的封面
-assets/favicon.svg      WEI OS 图标
-个人介绍.html             保留的可编辑个人介绍页模板
-licenses/vcard-MIT.txt   原模板的 MIT 许可全文
-```
+## 内容维护
 
-## 原个人介绍页
+- `public/data/profile.json`：头像、称呼和关注方向。
+- `public/data/sections/cover.json`：介绍与探索方向。
+- `public/data/sections/portfolio.json`：作品、在线体验与源码入口。
+- `public/data/sections/contact.json`：邮箱、小红书和 GitHub。
+- `public/data/settings.json`：默认浅色主题与中文设置。
+- `src/styles/themes/_variables-theme-light.scss`：浅色主题配色。
 
-[可编辑模板](https://tfiyw-wei.github.io/personal-website/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D.html) 保留原有的资料编辑、浏览器本地保存和 HTML 导出功能。模板中的占位内容供使用者填写，不作为站主履历。
+## 作品说明
 
-## 来源与致谢
+[饿了么概念交互作品](https://github.com/tfiyw-wei/eleme-motion-landing-page) 是非官方概念原型。点餐助手使用本地示例菜单与规则筛选，未接入真实 AI 模型、交易或配送服务。
 
-改造基础：[codewithsadee/vcard-personal-portfolio](https://github.com/codewithsadee/vcard-personal-portfolio)，参考版本 `927f09a6ef894a24cc8aef7a2e51f8e93ac306f7`。保留并改造其 `data-page` / `data-nav-link` 分页及 `data-filter-item` 分类筛选模式，移除未使用的评价、客户、简历与表单模块。原作者为 codewithsadee，Copyright (c) 2022；[MIT 许可全文](./licenses/vcard-MIT.txt) 随代码保留。
-
-视觉方向参考用户提供的 [HiWhaleW 个人站](https://hiwhalew.github.io/) 截图：浅色桌面、侧栏导航、窗口与流程图。本项目重新实现布局与视觉，没有复制对方源码、照片、个人介绍、经历或作品。
-
-封面来自自己的 [eleme-motion-landing-page](https://github.com/tfiyw-wei/eleme-motion-landing-page) 项目。该作品是非官方品牌概念，点餐原型使用本地菜单与规则，未接入真实 AI 模型或交易系统。
-
-## 发布
-
-GitHub Pages 使用 `main` 分支根目录，无需构建；`.nojekyll` 禁用 Jekyll 处理。所有站内资源使用相对地址，兼容 `/personal-website/` 项目路径。
-
-## 验证
-
-- 320、390、768、1024、1440 像素宽度的四个页面均无横向溢出。
-- 已验证作品筛选、快捷导航搜索、邮件链接、复制邮箱与浏览器后退。
-- 保留原始个人介绍页，使用新窗口打开以避免丢失编辑状态。
+[原个人介绍模板](https://tfiyw-wei.github.io/personal-website/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D.html) 源文件保存在 `public/个人介绍.html`，原有编辑、本地保存与导出功能保持可用。模板中的占位资料供使用者填写。

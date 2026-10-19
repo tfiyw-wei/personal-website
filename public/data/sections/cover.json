@@ -1,0 +1,166 @@
+{
+    "title": {
+        "locales": {
+            "zh": {
+                "title_short": "关于我",
+                "title_short_nav": "关于我",
+                "title_long_prefix": "很高兴在这里遇见你",
+                "title_long": "你好，我是 {{tfiyw-wei}}"
+            }
+        }
+    },
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticleInlineList",
+            "locales": {
+                "zh": {}
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc",
+                "display_as_list_if_width_is_lower_than": 480
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "label": "GitHub",
+                    "link": {
+                        "href": "https://github.com/tfiyw-wei",
+                        "tooltipString": "see_on_github"
+                    },
+                    "faIcon": "fa-brands fa-github"
+                },
+                {
+                    "id": 2,
+                    "label": "小红书",
+                    "link": {
+                        "href": "https://www.xiaohongshu.com/user/profile/5b55ea34f7e8b907ecbd300a",
+                        "tooltipString": "visit_xiaohongshu"
+                    },
+                    "faIcon": "fa-solid fa-book"
+                },
+                {
+                    "id": 3,
+                    "label": "179369971@qq.com",
+                    "link": {
+                        "href": "mailto:179369971@qq.com",
+                        "tooltipString": "email_me"
+                    },
+                    "faIcon": "fa-regular fa-envelope"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "component": "ArticleText",
+            "locales": {
+                "zh": {
+                    "title": "把想法做成{{可以体验的作品}}"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "images/personal/eleme-cover.jpg",
+                    "label": "饿了么概念交互作品封面",
+                    "faIcon": "",
+                    "faIconColors": {},
+                    "locales": {
+                        "zh": {
+                            "text": "<p>我关注 {{AI 产品探索}}与{{交互原型}}，喜欢从具体的使用场景出发，把一个想法做成可以点击、体验和继续迭代的作品。</p><p>这里记录我对产品场景、交互设计与网页体验的探索。你可以打开现有作品，看看它们如何组织信息、呈现流程，以及回应用户的操作。</p><p>从一个小想法开始，做出可以体验的下一步。</p>"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "component": "ArticleCards",
+            "locales": {
+                "zh": {
+                    "title": "我正在{{探索什么}}"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "faIcon": "fa-solid fa-wand-magic-sparkles",
+                    "faIconColors": {},
+                    "link": {
+                        "href": "#portfolio",
+                        "tooltipString": "view_projects"
+                    },
+                    "locales": {
+                        "zh": {
+                            "title": "AI 产品探索",
+                            "text": "从使用场景理解需求，思考 AI 能在哪一步提供帮助。"
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "faIcon": "fa-solid fa-arrow-pointer",
+                    "faIconColors": {},
+                    "link": {
+                        "href": "#portfolio",
+                        "tooltipString": "view_projects"
+                    },
+                    "locales": {
+                        "zh": {
+                            "title": "交互原型",
+                            "text": "把抽象想法变成可操作的流程，让体验帮助下一次迭代。"
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "faIcon": "fa-solid fa-window-maximize",
+                    "faIconColors": {},
+                    "link": {
+                        "href": "#portfolio",
+                        "tooltipString": "view_projects"
+                    },
+                    "locales": {
+                        "zh": {
+                            "title": "网页体验",
+                            "text": "探索视觉叙事、动效与响应式布局之间的配合。"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "component": "ArticleInlineList",
+            "locales": {
+                "zh": {
+                    "title": "模板来源"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "label": "React Portfolio · Ryan Balieiro · MIT",
+                    "link": {
+                        "href": "https://github.com/ryanbalieiro/react-portfolio-template",
+                        "tooltipString": "template_source"
+                    },
+                    "faIcon": "fa-brands fa-github"
+                }
+            ]
+        }
+    ]
+}

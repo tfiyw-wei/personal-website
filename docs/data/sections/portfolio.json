@@ -1,0 +1,109 @@
+{
+    "title": {
+        "locales": {
+            "zh": {
+                "title_short": "我的作品",
+                "title_short_nav": "我的作品",
+                "title_long_prefix": "从想法到可体验的页面",
+                "title_long": "我的{{作品}}"
+            }
+        }
+    },
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticlePortfolio",
+            "locales": {
+                "zh": {
+                    "category_all": "全部",
+                    "category_prototype": "交互原型",
+                    "category_template": "页面模板"
+                }
+            },
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc",
+                "categorize_by": [
+                    "category_prototype",
+                    "category_template"
+                ]
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "categoryId": "category_prototype",
+                    "img": "images/personal/eleme-cover.jpg",
+                    "faIcon": "",
+                    "faIconColors": {},
+                    "preview": {
+                        "links": [
+                            {
+                                "href": "https://tfiyw-wei.github.io/eleme-motion-landing-page/",
+                                "tooltipString": "open_demo",
+                                "faIcon": "fa-solid fa-arrow-up-right-from-square"
+                            },
+                            {
+                                "href": "https://github.com/tfiyw-wei/eleme-motion-landing-page",
+                                "tooltipString": "see_on_github",
+                                "faIcon": "fa-brands fa-github"
+                            }
+                        ],
+                        "screenshots": [
+                            "images/personal/eleme-cover.jpg"
+                        ],
+                        "screenshotsAspectRatio": "16:9",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "zh": {
+                            "title": "饿了么 · 这一口，就是现在",
+                            "text": "<p>围绕「今天吃什么」展开的品牌体验概念作品：从美食发现、场景切换，到点餐筛选与配送演示，把一段使用流程做成可交互的原型。</p><p>非官方概念作品。点餐助手使用本地示例菜单与规则筛选，未接入真实 AI 模型或交易系统。</p>",
+                            "tags": [
+                                "场景设计",
+                                "交互原型",
+                                "HTML / CSS / JavaScript"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "categoryId": "category_template",
+                    "img": "images/personal/intro-cover.png",
+                    "faIcon": "",
+                    "faIconColors": {},
+                    "preview": {
+                        "links": [
+                            {
+                                "href": "https://tfiyw-wei.github.io/personal-website/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D.html",
+                                "tooltipString": "open_template",
+                                "faIcon": "fa-solid fa-arrow-up-right-from-square"
+                            },
+                            {
+                                "href": "https://github.com/tfiyw-wei/personal-website/blob/main/public/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D.html",
+                                "tooltipString": "see_on_github",
+                                "faIcon": "fa-brands fa-github"
+                            }
+                        ],
+                        "screenshots": [
+                            "images/personal/intro-cover.png"
+                        ],
+                        "screenshotsAspectRatio": "16:9",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "zh": {
+                            "title": "我的一页个人空间",
+                            "text": "<p>一个可直接编辑的个人介绍页模板。写下自己的介绍、兴趣与联系方式，保存到浏览器，或导出成独立 HTML。</p><p>这是可填写的模板。编辑内容保存在当前浏览器，导出后可随文件保留。</p>",
+                            "tags": [
+                                "个人表达",
+                                "单文件 HTML",
+                                "本地保存"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "tfiyw-wei",
+    "profilePictureUrl": "images/personal/avatar.png",
+    "resumePdfUrl": "",
+    "statusCircleVisible": false,
+    "locales": {
+        "zh": {
+            "localized_name": "tfiyw-wei",
+            "localized_name_stylized": "{{tfiyw-wei}}",
+            "roles": [
+                "AI 产品探索",
+                "交互原型"
+            ]
+        }
+    }
+}
