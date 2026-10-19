@@ -13,8 +13,17 @@
     const routes = new Set(pages.map((page) => page.dataset.page));
     const defaultRoute = routes.has('about') ? 'about' : pages[0]?.dataset.page;
     const path = document.querySelector('#window-path');
+    const label = document.querySelector('#window-label');
+    const content = document.querySelector('#window-content');
     const section = document.querySelector('#current-section');
     const terminal = document.querySelector('#terminal-command');
+    const routeDetails = {
+      about: { path: 'about.md', label: '关于我' },
+      projects: { path: 'projects.gallery', label: '作品' },
+      process: { path: 'process.md', label: '探索方法' },
+      notes: { path: 'notes.library', label: '记录与分享' },
+      contact: { path: 'contact.card', label: '找到我' },
+    };
     const dialog = document.querySelector('#command-dialog');
     const commandSearch = document.querySelector('#command-search');
     const commands = [...document.querySelectorAll('[data-command-target]')];
@@ -43,17 +52,19 @@
         if (active) link.setAttribute('aria-current', 'page');
         else link.removeAttribute('aria-current');
       });
-      if (path) path.textContent = `~/portfolio/${route}`;
+      const details = routeDetails[route];
+      if (path) path.textContent = details?.path || `${route}.md`;
+      if (label) label.textContent = details?.label || route;
       if (section) section.textContent = route.toUpperCase();
       if (terminal) terminal.textContent = `open ${route}`;
-      if (focusHeading) {
+      window.requestAnimationFrame(() => {
+        content?.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        if (!focusHeading) return;
         const page = pages.find((item) => item.dataset.page === route);
         const heading = page?.querySelector('[data-page-heading]');
-        window.requestAnimationFrame(() => {
-          heading?.focus({ preventScroll: true });
-          window.scrollTo({ top: 0, behavior: 'instant' });
-        });
-      }
+        heading?.focus({ preventScroll: true });
+      });
     };
 
     const syncRoute = (focusHeading = false) => {
@@ -81,6 +92,23 @@
     });
     window.addEventListener('hashchange', () => syncRoute(true));
     syncRoute();
+
+    const desktopClock = document.querySelector('#desktop-clock');
+    if (desktopClock) {
+      const updateClock = () => {
+        const now = new Date();
+        const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        desktopClock.textContent = `${now.getMonth() + 1}/${now.getDate()} 周${weekdays[now.getDay()]} ${hours}:${minutes}`;
+        desktopClock.dateTime = now.toISOString();
+      };
+      updateClock();
+      window.setInterval(updateClock, 30000);
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) updateClock();
+      });
+    }
 
     // The skip link moves keyboard focus without replacing the page route.
     document.querySelectorAll('.skip-link[href="#main-window"]').forEach((link) => {
@@ -200,22 +228,6 @@
       }
     });
 
-    const focusToggle = document.querySelector('#focus-toggle');
-    const setFocusMode = (enabled) => {
-      document.body.classList.toggle('focus-mode', enabled);
-      if (!focusToggle) return;
-      const label = enabled ? '退出专注视图' : '专注视图';
-      focusToggle.setAttribute('aria-pressed', String(enabled));
-      focusToggle.setAttribute('aria-label', label);
-      focusToggle.title = enabled ? '退出专注视图（Esc）' : label;
-      const labelElement = focusToggle.querySelector('[data-focus-label]');
-      if (labelElement) labelElement.textContent = label;
-    };
-    focusToggle?.addEventListener('click', () => {
-      setFocusMode(!document.body.classList.contains('focus-mode'));
-    });
-    if (focusToggle) setFocusMode(document.body.classList.contains('focus-mode'));
-
     document.addEventListener('keydown', (event) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k' && dialog) {
         event.preventDefault();
@@ -225,9 +237,6 @@
         if (dialog?.open) {
           event.preventDefault();
           closeCommands();
-        } else if (document.body.classList.contains('focus-mode')) {
-          setFocusMode(false);
-          focusToggle?.focus();
         }
       }
     });
