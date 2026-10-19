@@ -39,8 +39,8 @@ function ArticleInlineListItems({ dataWrapper, selectedItemCategoryId}) {
         xxl: 5,
         xl: 4,
         md: 3,
-        sm: 2,
-        default: 2
+        sm: 3,
+        default: 3
     })
 
     const filteredItems = dataWrapper.getOrderedItemsFilteredBy(selectedItemCategoryId)
